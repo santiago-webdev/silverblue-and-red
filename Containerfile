@@ -58,10 +58,10 @@ RUN rpm-ostree install --idempotent \
         xdg-desktop-portal-gnome \
         xdg-user-dirs
 
-RUN systemd enable \
-        docker \
-        sshd \
-        tuned
+RUN mkdir -p /etc/systemd/system/multi-user.target.wants
+RUN ln -s /usr/lib/systemd/system/tuned.service /etc/systemd/system/multi-user.target.wants/tuned.service
+RUN ln -s /usr/lib/systemd/system/docker.service /etc/systemd/system/multi-user.target.wants/docker.service
+RUN ln -s /usr/lib/systemd/system/sshd.service /etc/systemd/system/multi-user.target.wants/sshd.service
 
 RUN rm -rf /var/* ~/.*
 RUN rpm-ostree cleanup -m
