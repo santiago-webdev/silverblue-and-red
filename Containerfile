@@ -39,6 +39,11 @@ RUN rpm-ostree install --idempotent \
         libnotify \
         libportal \
         openssl \
+        docker-ce \
+        docker-ce-cli \
+        containerd.io \
+        docker-buildx-plugin \
+        docker-compose-plugin \
         openssl-devel \
         pkg-config \
         gnome-browser-connector \
