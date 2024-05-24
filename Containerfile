@@ -8,6 +8,7 @@ COPY files/vscode.repo /etc/yum.repos.d/vscode.repo
 COPY files/docker-ce.repo /etc/yum.repos.d/docker-ce.repo
 COPY files/ideapad /etc/sudoers.d/ideapad
 COPY files/modules /etc/modules
+COPY files/rpm-ostreed.conf /etc/rpm-ostreed.conf
 
 RUN rpm-ostree uninstall --idempotent \
         default-editor \
@@ -62,6 +63,7 @@ RUN mkdir -p /etc/systemd/system/multi-user.target.wants
 RUN ln -s /usr/lib/systemd/system/tuned.service /etc/systemd/system/multi-user.target.wants/tuned.service
 RUN ln -s /usr/lib/systemd/system/docker.service /etc/systemd/system/multi-user.target.wants/docker.service
 RUN ln -s /usr/lib/systemd/system/sshd.service /etc/systemd/system/multi-user.target.wants/sshd.service
+RUN ln -s /usr/lib/systemd/system/rpm-ostreed-automatic.timer /etc/systemd/system/timers.target.wants/
 
 RUN rm -rf /var/* ~/.*
 RUN rpm-ostree cleanup -m
