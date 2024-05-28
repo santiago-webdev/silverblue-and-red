@@ -32,6 +32,7 @@ RUN rpm-ostree install --idempotent \
         distrobox \
         dkms \
         efibootmgr \
+        foot \
         ffmpeg \
         ffmpegthumbs \
         flatpak-xdg-utils \
