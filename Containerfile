@@ -6,7 +6,6 @@ RUN rpm-ostree install --idempotent \
 
 COPY files/vscode.repo /etc/yum.repos.d/vscode.repo
 COPY files/docker-ce.repo /etc/yum.repos.d/docker-ce.repo
-COPY files/wezterm-nightly.repo /etc/yum.repos.d/wezterm-nightly.repo
 COPY files/ideapad /etc/sudoers.d/ideapad
 COPY files/modules /etc/modules
 COPY files/rpm-ostreed.conf /etc/rpm-ostreed.conf
@@ -55,7 +54,6 @@ RUN rpm-ostree install --idempotent \
         tuned \
         tuned-ppd \
         tuned-utils \
-        wezterm \
         wl-clipboard \
         xdg-desktop-portal \
         xdg-desktop-portal-gnome \
