@@ -29,12 +29,19 @@ RUN rpm-ostree uninstall --idempotent \
 
 RUN rpm-ostree install --idempotent \
         code \
+        containerd.io \
         distrobox \
         dkms \
+        docker-buildx-plugin \
+        docker-ce \
+        docker-ce-cli \
+        docker-compose-plugin \
         efibootmgr \
         ffmpeg \
         ffmpegthumbs \
         flatpak-xdg-utils \
+        gnome-browser-connector \
+        gnome-tweaks \
         intel-media-driver \
         just \
         libgda \
@@ -42,15 +49,8 @@ RUN rpm-ostree install --idempotent \
         libnotify \
         libportal \
         openssl \
-        docker-ce \
-        docker-ce-cli \
-        containerd.io \
-        docker-buildx-plugin \
-        docker-compose-plugin \
         openssl-devel \
         pkg-config \
-        gnome-browser-connector \
-        gnome-tweaks \
         slirp4netns \
         stow \
         tuned \
