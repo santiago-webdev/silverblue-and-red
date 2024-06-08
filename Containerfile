@@ -37,6 +37,8 @@ RUN rpm-ostree install --idempotent \
         flatpak-xdg-utils \
         intel-media-driver \
         just \
+        libgda \
+        libgda-sqlite \
         libnotify \
         libportal \
         openssl \
