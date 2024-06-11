@@ -48,6 +48,7 @@ RUN rpm-ostree install --idempotent \
         libgda-sqlite \
         libnotify \
         libportal \
+        neovim \
         openssl \
         openssl-devel \
         pkg-config \
