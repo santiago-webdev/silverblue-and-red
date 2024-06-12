@@ -37,6 +37,7 @@ RUN rpm-ostree install --idempotent \
         docker-compose-plugin \
         efibootmgr \
         extra-cmake-modules \
+        fail2ban \
         ffmpeg \
         ffmpegthumbs \
         flatpak-xdg-utils \
@@ -67,6 +68,7 @@ RUN mkdir -p /etc/systemd/system/multi-user.target.wants
 RUN ln -s /usr/lib/systemd/system/tuned.service /etc/systemd/system/multi-user.target.wants/tuned.service
 RUN ln -s /usr/lib/systemd/system/docker.service /etc/systemd/system/multi-user.target.wants/docker.service
 RUN ln -s /usr/lib/systemd/system/sshd.service /etc/systemd/system/multi-user.target.wants/sshd.service
+RUN ln -s /usr/lib/systemd/system/fail2ban.service /etc/systemd/system/multi-user.target.wants/fail2ban.service
 RUN ln -s /usr/lib/systemd/system/rpm-ostreed-automatic.timer /etc/systemd/system/timers.target.wants/
 
 RUN rm -rf /var/* ~/.*
