@@ -6,6 +6,7 @@ RUN rpm-ostree install --idempotent \
 
 COPY files/vscode.repo /etc/yum.repos.d/vscode.repo
 COPY files/wezterm.repo /etc/yum.repos.d/wezterm.repo
+COPY files/koi.repo /etc/yum.repos.d/koi.repo
 COPY files/docker-ce.repo /etc/yum.repos.d/docker-ce.repo
 COPY files/ideapad /etc/sudoers.d/ideapad
 COPY files/modules /etc/modules
@@ -24,6 +25,8 @@ RUN rpm-ostree uninstall --idempotent \
         libswscale-free
 
 RUN rpm-ostree install --idempotent \
+        Koi \
+        cmake \
         code \
         containerd.io \
         distrobox \
@@ -33,17 +36,23 @@ RUN rpm-ostree install --idempotent \
         docker-ce-cli \
         docker-compose-plugin \
         efibootmgr \
+        extra-cmake-modules \
         ffmpeg \
         ffmpegthumbs \
         flatpak-xdg-utils \
+        hicolor-icon-theme'
         intel-media-driver \
         just \
+        kf6-kconfig-devel \
+        kf6-kconfigwidgets-devel \
+        kf6-kcoreaddons-devel \
         libnotify \
         libportal \
         neovim \
         openssl \
         openssl-devel \
         pkg-config \
+        qt6qt-base \
         slirp4netns \
         stow \
         tuned \
