@@ -5,6 +5,7 @@ RUN rpm-ostree install --idempotent \
         http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-40.noarch.rpm
 
 COPY files/vscode.repo /etc/yum.repos.d/vscode.repo
+COPY files/wezterm.repo /etc/yum.repos.d/wezterm.repo
 COPY files/docker-ce.repo /etc/yum.repos.d/docker-ce.repo
 COPY files/ideapad /etc/sudoers.d/ideapad
 COPY files/modules /etc/modules
@@ -48,6 +49,7 @@ RUN rpm-ostree install --idempotent \
         tuned \
         tuned-ppd \
         tuned-utils \
+        wezterm \
         wl-clipboard \
         xdg-desktop-portal \
         xdg-desktop-portal-kde \
