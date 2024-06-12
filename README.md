@@ -23,8 +23,9 @@ This is my personal OCI Fedora Silverblue image
 
 ## Why keep Firefox on the image?
 
-- KeePassXC flatpak works properly
-- GNOME Shell browser integration so that I can manage the extensions from the website directly
+- KeePassXC and the browser integration works as a flatpak
+- Both of the DEs that I like, (GNOME and KDE Plasma) offer some kind of browser integration
+    - Keeping Firefox in the host means I have that integration
 - Avoid any kind of conflicts specially when working with scripts, webextensions and containers
 - Even if you purge your flatpaks you still have a browser to work with
 
