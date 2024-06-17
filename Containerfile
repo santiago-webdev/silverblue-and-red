@@ -9,6 +9,7 @@ COPY files/docker-ce.repo /etc/yum.repos.d/docker-ce.repo
 COPY files/ideapad /etc/sudoers.d/ideapad
 COPY files/modules /etc/modules
 COPY files/rpm-ostreed.conf /etc/rpm-ostreed.conf
+COPY files/session.conf /usr/share/dbus-1/session.conf
 
 RUN rpm-ostree uninstall --idempotent \
         default-editor \
