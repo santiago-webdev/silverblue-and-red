@@ -11,6 +11,7 @@ COPY files/docker-ce.repo /etc/yum.repos.d/docker-ce.repo
 COPY files/ideapad /etc/sudoers.d/ideapad
 COPY files/modules /etc/modules
 COPY files/rpm-ostreed.conf /etc/rpm-ostreed.conf
+COPY files/10-wayland.conf /etc/sddm.conf.d/10-wayland.conf
 
 RUN rpm-ostree uninstall --idempotent \
         power-profiles-daemon \
