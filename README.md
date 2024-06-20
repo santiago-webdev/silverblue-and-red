@@ -25,7 +25,8 @@ This is my personal OCI Fedora Silverblue image
 
 - KeePassXC and the browser integration works as a flatpak
 - Both of the DEs that I like, (GNOME and KDE Plasma) offer some kind of browser integration
-    - Keeping Firefox in the host means I have that integration
+    - Keeping Firefox in the host means I have that integration, it'll let you search through history, tabs and bookmarks
+    - In the case of GNOME it'll let you interact with the website for GNOME extensions
 - Avoid any kind of conflicts specially when working with scripts, webextensions and containers
 - Even if you purge your flatpaks you still have a browser to work with
 
