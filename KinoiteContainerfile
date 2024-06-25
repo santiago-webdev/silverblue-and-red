@@ -59,6 +59,7 @@ RUN rpm-ostree install --idempotent \
         tuned \
         tuned-ppd \
         tuned-utils \
+        foot \
         wezterm \
         wl-clipboard \
         xdg-desktop-portal \
