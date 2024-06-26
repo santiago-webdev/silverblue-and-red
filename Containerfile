@@ -43,6 +43,7 @@ RUN rpm-ostree install --idempotent \
         flatpak-xdg-utils \
         gnome-browser-connector \
         gnome-tweaks \
+        gpaste \
         intel-media-driver \
         just \
         libgda \
