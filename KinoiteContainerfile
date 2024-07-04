@@ -42,6 +42,7 @@ RUN rpm-ostree install --idempotent \
         ffmpegthumbs \
         flatpak-xdg-utils \
         hicolor-icon-theme \
+        input-remapper \
         intel-media-driver \
         just \
         kf6-kconfig-devel \
@@ -65,6 +66,7 @@ RUN rpm-ostree install --idempotent \
 
 RUN mkdir -p /etc/systemd/system/multi-user.target.wants
 RUN ln -s /usr/lib/systemd/system/tuned.service /etc/systemd/system/multi-user.target.wants/tuned.service
+RUN ln -s /usr/lib/systemd/system/input-remapper.service /etc/systemd/system/multi-user.target.wants/input-remapper.service
 RUN ln -s /usr/lib/systemd/system/docker.service /etc/systemd/system/multi-user.target.wants/docker.service
 RUN ln -s /usr/lib/systemd/system/sshd.service /etc/systemd/system/multi-user.target.wants/sshd.service
 RUN ln -s /usr/lib/systemd/system/fail2ban.service /etc/systemd/system/multi-user.target.wants/fail2ban.service
