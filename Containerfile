@@ -43,6 +43,7 @@ RUN rpm-ostree install --idempotent \
         flatpak-xdg-utils \
         gnome-browser-connector \
         gnome-tweaks \
+        input-remapper \
         intel-media-driver \
         just \
         libgda \
@@ -65,6 +66,7 @@ RUN rpm-ostree install --idempotent \
 
 RUN mkdir -p /etc/systemd/system/multi-user.target.wants
 RUN ln -s /usr/lib/systemd/system/tuned.service /etc/systemd/system/multi-user.target.wants/tuned.service
+RUN ln -s /usr/lib/systemd/system/input-remapper.service /etc/systemd/system/multi-user.target.wants/input-remapper.service
 RUN ln -s /usr/lib/systemd/system/docker.service /etc/systemd/system/multi-user.target.wants/docker.service
 RUN ln -s /usr/lib/systemd/system/sshd.service /etc/systemd/system/multi-user.target.wants/sshd.service
 RUN ln -s /usr/lib/systemd/system/rpm-ostreed-automatic.timer /etc/systemd/system/timers.target.wants/
