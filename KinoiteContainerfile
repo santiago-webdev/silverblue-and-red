@@ -41,6 +41,7 @@ RUN rpm-ostree install --idempotent \
         ffmpeg \
         ffmpegthumbs \
         flatpak-xdg-utils \
+        foot \
         hicolor-icon-theme \
         input-remapper \
         intel-media-driver \
