@@ -55,6 +55,7 @@ RUN rpm-ostree install --idempotent \
         openssl \
         openssl-devel \
         pkg-config \
+        qt6-qtimageformats \
         slirp4netns \
         stow \
         tuned \
