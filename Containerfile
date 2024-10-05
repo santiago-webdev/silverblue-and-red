@@ -1,8 +1,8 @@
 FROM quay.io/fedora/fedora-silverblue:41
 
 RUN rpm-ostree install --idempotent \
-		https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
-		https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+        https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+        https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 COPY files/vscode.repo /etc/yum.repos.d/vscode.repo
 COPY files/docker-ce.repo /etc/yum.repos.d/docker-ce.repo
@@ -31,7 +31,6 @@ RUN rpm-ostree install --idempotent \
         code \
         containerd.io \
         distrobox \
-        # dkms \
         docker-buildx-plugin \
         docker-ce \
         docker-ce-cli \
@@ -42,7 +41,6 @@ RUN rpm-ostree install --idempotent \
         flatpak-xdg-utils \
         gnome-browser-connector \
         gnome-tweaks \
-        # input-remapper \
         intel-media-driver \
         just \
         libgda \
@@ -50,8 +48,6 @@ RUN rpm-ostree install --idempotent \
         libnotify \
         libportal \
         neovim \
-        # openssl \
-        # openssl-devel \
         pkg-config \
         slirp4netns \
         stow \
@@ -61,9 +57,7 @@ RUN rpm-ostree install --idempotent \
         xdg-user-dirs
 
 RUN mkdir -p /etc/systemd/system/multi-user.target.wants
-# RUN ln -s /usr/lib/systemd/system/input-remapper.service /etc/systemd/system/multi-user.target.wants/input-remapper.service
 RUN ln -s /usr/lib/systemd/system/docker.service /etc/systemd/system/multi-user.target.wants/docker.service
-# RUN ln -s /usr/lib/systemd/system/sshd.service /etc/systemd/system/multi-user.target.wants/sshd.service
 RUN ln -s /usr/lib/systemd/system/rpm-ostreed-automatic.timer /etc/systemd/system/timers.target.wants/
 
 RUN rm -rf /var/* ~/.*
