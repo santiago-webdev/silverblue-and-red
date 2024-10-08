@@ -12,16 +12,16 @@ COPY files/modules /etc/modules
 COPY files/rpm-ostreed.conf /etc/rpm-ostreed.conf
 COPY files/10-wayland.conf /etc/sddm.conf.d/10-wayland.conf
 
-RUN rpm-ostree uninstall --idempotent \
-        ffmpeg-free \
-        libavcodec-free \
-        libavdevice-free \
-        libavfilter-free \
-        libavformat-free \
-        libavutil-free \
-        libpostproc-free \
-        libswresample-free \
-        libswscale-free
+# RUN rpm-ostree uninstall --idempotent \
+#         ffmpeg-free \
+#         libavcodec-free \
+#         libavdevice-free \
+#         libavfilter-free \
+#         libavformat-free \
+#         libavutil-free \
+#         libpostproc-free \
+#         libswresample-free \
+#         libswscale-free
 
 RUN rpm-ostree install --idempotent \
         Koi \
@@ -36,8 +36,8 @@ RUN rpm-ostree install --idempotent \
         docker-compose-plugin \
         efibootmgr \
         extra-cmake-modules \
-        ffmpeg \
-        ffmpegthumbs \
+        # ffmpeg \
+        # ffmpegthumbs \
         flatpak-xdg-utils \
         foot \
         hicolor-icon-theme \

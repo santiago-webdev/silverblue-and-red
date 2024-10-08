@@ -16,16 +16,16 @@ RUN rpm-ostree uninstall --idempotent \
         gnome-initial-setup \
         gnome-tour \
         nano-default-editor \
-        yelp \
-        ffmpeg-free \
-        libavcodec-free \
-        libavdevice-free \
-        libavfilter-free \
-        libavformat-free \
-        libavutil-free \
-        libpostproc-free \
-        libswresample-free \
-        libswscale-free
+        yelp
+        # ffmpeg-free \
+        # libavcodec-free \
+        # libavdevice-free \
+        # libavfilter-free \
+        # libavformat-free \
+        # libavutil-free \
+        # libpostproc-free \
+        # libswresample-free \
+        # libswscale-free
 
 RUN rpm-ostree install --idempotent \
         code \
@@ -36,8 +36,8 @@ RUN rpm-ostree install --idempotent \
         docker-ce-cli \
         docker-compose-plugin \
         efibootmgr \
-        ffmpeg \
-        ffmpegthumbs \
+        # ffmpeg \
+        # ffmpegthumbs \
         flatpak-xdg-utils \
         gnome-browser-connector \
         gnome-tweaks \
