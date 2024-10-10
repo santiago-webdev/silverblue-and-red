@@ -28,6 +28,9 @@ RUN rpm-ostree uninstall --idempotent \
         # libswscale-free
 
 RUN rpm-ostree install --idempotent \
+	ddcutil \
+        # ffmpeg \
+        # ffmpegthumbs \
         code \
         containerd.io \
         distrobox \
@@ -36,8 +39,6 @@ RUN rpm-ostree install --idempotent \
         docker-ce-cli \
         docker-compose-plugin \
         efibootmgr \
-        # ffmpeg \
-        # ffmpegthumbs \
         flatpak-xdg-utils \
         gnome-browser-connector \
         gnome-tweaks \
