@@ -5,7 +5,7 @@ RUN rpm-ostree install --idempotent \
         https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 COPY files/vscode.repo /etc/yum.repos.d/vscode.repo
-COPY files/docker-ce.repo /etc/yum.repos.d/docker-ce.repo
+# COPY files/docker-ce.repo /etc/yum.repos.d/docker-ce.repo
 COPY files/ideapad /etc/sudoers.d/ideapad
 COPY files/modules /etc/modules
 COPY files/rpm-ostreed.conf /etc/rpm-ostreed.conf
@@ -32,12 +32,12 @@ RUN rpm-ostree install --idempotent \
         # ffmpeg \
         # ffmpegthumbs \
         code \
-        containerd.io \
+        # containerd.io \
         distrobox \
-        docker-buildx-plugin \
-        docker-ce \
-        docker-ce-cli \
-        docker-compose-plugin \
+        # docker-buildx-plugin \
+        # docker-ce \
+        # docker-ce-cli \
+        # docker-compose-plugin \
         efibootmgr \
         flatpak-xdg-utils \
         gnome-browser-connector \
@@ -58,7 +58,7 @@ RUN rpm-ostree install --idempotent \
         xdg-user-dirs
 
 RUN mkdir -p /etc/systemd/system/multi-user.target.wants
-RUN ln -s /usr/lib/systemd/system/docker.service /etc/systemd/system/multi-user.target.wants/docker.service
+# RUN ln -s /usr/lib/systemd/system/docker.service /etc/systemd/system/multi-user.target.wants/docker.service
 RUN ln -s /usr/lib/systemd/system/rpm-ostreed-automatic.timer /etc/systemd/system/timers.target.wants/
 
 RUN rm -rf /var/* ~/.*
